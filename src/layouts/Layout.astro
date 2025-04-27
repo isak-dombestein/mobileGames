@@ -1,0 +1,96 @@
+---
+import background from '../assets/background.svg';
+
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image" href="/favicon.png" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+
+            <style>
+                * {
+                  margin: 0;
+                  padding: 0;
+                  box-sizing: border-box;
+                }
+          
+                #background {
+                  position: fixed;
+                  top: 0;
+                  left: 0;
+                  width: 100%;
+                  height: 100%;
+                  z-index: -1;
+                  filter: blur(100px);
+                }
+          
+                body {
+                  background-color: #1a1a1a;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  min-height: 100vh;
+                  font-family: Inter, sans-serif;
+                }
+          
+                #game-wrapper {
+                  z-index: 1;
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                }
+          
+                h1 {
+                  color: white;
+                  font-size: 2rem;
+                  margin-bottom: 1rem;
+                }
+
+				        @keyframes fadeOut {
+					        0% {opacity: 1; }
+					        80% { opacity: 1; }
+					        100% { opacity: 0; display: none; }
+				        }
+
+                @keyframes fadeIn {
+                  from {
+                    opacity: 0;
+                    transform: translateY(10px);
+                  }
+                  to {
+                    opacity: 1;
+                    transform: translateY(0);
+                  }
+                }
+
+
+        
+              </style>
+	</head>
+	<body>
+		<img id="background" src={background.src} alt="" fetchpriority="high" />
+
+            <div id="game-wrapper">
+			<slot />
+            </div>
+	</body>
+</html>
+
+<style>
+	html,
+	body {
+		margin: 0;
+		width: 100%;
+		height: 100%;
+	}
+</style>

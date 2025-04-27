@@ -1,0 +1,76 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Games | Dombestein Data">
+  <section style={{
+    width: '100vw',
+    height: '100vh',
+    color: '#fff',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    textAlign: 'center',
+    padding: '2rem',
+    fontFamily: 'monospace',
+  }}>
+    <h1 style={{
+      fontSize: '2.5rem',
+      color: 'white',
+      marginBottom: '2rem',
+      fontFamily: 'monospace',
+      animation: 'fadeIn 1s ease-out forwards',
+      animationDelay: '0.2s',
+      opacity: 0
+    }}>
+      Coffee Run
+    </h1>
+
+    <div style={{
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      flexWrap: 'wrap',
+      gap: '2rem',
+      animation: 'fadeIn 1s ease-out forwards',
+      animationDelay: '0.6s',
+      opacity: 0
+    }}>
+      <a href="/coffeeRun/index.html" style={{
+        textDecoration: 'none',
+        color: 'white',
+        textAlign: 'center',
+        transition: 'transform 0.2s ease-in-out',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        animation: 'fadeIn 1s ease-out forwards',
+        animationDelay: '1s',
+        opacity: 0
+      }}>
+        <img 
+          src="/assets/sprites/coffeeRun/cuppy.png" 
+          alt="Coffee Run" 
+          width="96" 
+          height="96" 
+          style={{
+            marginBottom: '0.5rem',
+            borderRadius: '12px',
+            backgroundColor: '#ffffff22',
+            padding: '0.5rem',
+            transition: 'transform 0.2s ease-in-out'
+          }}
+        />
+        <span style={{
+          fontSize: '1.25rem',
+          fontWeight: 'bold',
+          fontFamily: 'monospace',
+          marginTop: '0.5rem'
+        }}>
+          Tap Cuppy to start!
+        </span>
+      </a>
+    </div>
+  </section>
+</Layout>

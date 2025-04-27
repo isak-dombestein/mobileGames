@@ -1,0 +1,8 @@
+---
+export const prerender = true;
+import CoffeeGame from '../components/CoffeeGame';
+import Layout from '../layouts/Layout.astro';
+---
+<Layout title="Coffee Run | Dombestein Data">
+    <CoffeeGame client:load />
+</Layout>
